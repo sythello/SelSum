@@ -33,6 +33,12 @@ class SumEncoder(TransformerEncoder):
 
     def forward(self, src_tokens, src_lengths, group_src_indxs, codes=None,
                 return_all_hiddens: bool = False):
+
+        ## src_tokens: (bs, seq_len)
+        ## src_lengths: (bs)
+        ## group_src_indxs: (15 or 5, 10). (Not 100% sure): (total NSENTS, NDOCS)
+        ## total NSENTS = 15 if sel_step (SEL_SAMPLE_NUM = BASELINE_SAMPLE_NUM = 3), 5 if sum_step
+
         enc_out = super(SumEncoder, self).forward(src_tokens=src_tokens,
                                                   src_lengths=src_lengths,
                                                   return_all_hiddens=return_all_hiddens)
@@ -51,20 +57,21 @@ class SumEncoder(TransformerEncoder):
 
     def group_enc_out(self, enc_out_obj, group_indxs):
         """Groups and concatenates the encoder output based on `group_indxs`."""
-        enc_out = enc_out_obj.encoder_out
-        enc_pad_mask = enc_out_obj.encoder_padding_mask
-        enc_emb = enc_out_obj.encoder_embedding
+        enc_out = enc_out_obj.encoder_out                   ## (seq_len, bs, dim)
+        enc_pad_mask = enc_out_obj.encoder_padding_mask     ## (bs, seq_len) ; True = padding, False = real input
+        enc_emb = enc_out_obj.encoder_embedding             ## (bs, seq_len, dim)
 
         seq_len = enc_out.size(0)
-        group_nr, el_per_group = group_indxs.shape
+        group_nr, el_per_group = group_indxs.shape          ## group_nr: total NSENTS; el_per_group: NDOCS
+                                                            ## (Not 100% sure) bs = group_nr * el_per_group + 1; last sample is all padding
         cat_seq_len = el_per_group * seq_len
 
         # transformations
-        enc_out = enc_out.transpose(1, 0)
-        enc_out = enc_out[group_indxs].view(group_nr, cat_seq_len, -1)
-        enc_out = enc_out.transpose(1, 0)
-        enc_emb = enc_emb[group_indxs].view(group_nr, cat_seq_len, -1)
-        enc_pad_mask = enc_pad_mask[group_indxs].view(group_nr, -1)
+        enc_out = enc_out.transpose(1, 0)                                   ## (bs, seq_len, dim)
+        enc_out = enc_out[group_indxs].view(group_nr, cat_seq_len, -1)      ## (group_nr, cat_seq_len, dim)
+        enc_out = enc_out.transpose(1, 0)                                   ## (cat_seq_len, group_nr, dim)
+        enc_emb = enc_emb[group_indxs].view(group_nr, cat_seq_len, -1)      ## (group_nr, cat_seq_len, dim)
+        enc_pad_mask = enc_pad_mask[group_indxs].view(group_nr, -1)         ## (group_nr, cat_seq_len)
 
         out = EncoderOut(encoder_out=enc_out,
                          encoder_padding_mask=enc_pad_mask,
