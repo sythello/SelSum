@@ -63,3 +63,30 @@
 2022-06-30T01:34:32.ip-172-31-66-186.ec2.internal CUDA_VISIBLE_DEVICES=0 bash selsum/scripts/training/train_selsum.sh
 2022-06-30T01:39:41.ip-172-31-66-186.ec2.internal git status
 2022-06-30T01:42:46.ip-172-31-66-186.ec2.internal git remote -v
+2022-06-30T01:42:50.ip-172-31-66-186.ec2.internal git add .
+2022-06-30T01:44:40.ip-172-31-66-186.ec2.internal cat .git/COMMIT_EDITMSG
+2022-06-30T01:45:47.ip-172-31-66-186.ec2.internal git commit
+2022-06-30T01:46:01.ip-172-31-66-186.ec2.internal git push
+2022-06-30T01:47:36.ip-172-31-66-186.ec2.internal git config user.name sythello
+2022-06-30T01:47:39.ip-172-31-66-186.ec2.internal ls .git
+2022-06-30T01:47:49.ip-172-31-66-186.ec2.internal cat .git/config 
+2022-06-30T01:48:27.ip-172-31-66-186.ec2.internal git push
+2022-06-30T01:59:40.ip-172-31-66-186.ec2.internal ssh-keygen -t rsa -b 4096 -C "sythello@github.com" -f ../../.ssh/id_rsa
+2022-06-30T02:09:24.ip-172-31-66-186.ec2.internal git config core.sshCommand 'ssh -i /home/ec2-user/ytshao/.ssh/id_rsa'
+2022-06-30T02:09:28.ip-172-31-66-186.ec2.internal cat .git/config 
+2022-06-30T02:09:39.ip-172-31-66-186.ec2.internal git pull
+2022-06-30T02:10:15.ip-172-31-66-186.ec2.internal git config pull.rebase false
+2022-06-30T02:10:18.ip-172-31-66-186.ec2.internal git pull
+2022-06-30T02:10:25.ip-172-31-66-186.ec2.internal git push
+2022-06-30T02:10:40.ip-172-31-66-186.ec2.internal cat .git/config 
+2022-06-30T02:13:25.ip-172-31-66-186.ec2.internal which gh
+2022-06-30T02:14:53.ip-172-31-66-186.ec2.internal conda install gh --channel conda-forge
+2022-06-30T02:14:56.ip-172-31-66-186.ec2.internal which gh
+2022-06-30T02:20:31.ip-172-31-66-186.ec2.internal gh auth login
+2022-06-30T02:20:42.ip-172-31-66-186.ec2.internal git pull
+2022-06-30T02:20:54.ip-172-31-66-186.ec2.internal git push
+2022-06-30T02:21:12.ip-172-31-66-186.ec2.internal gh auth login
+2022-06-30T02:21:36.ip-172-31-66-186.ec2.internal gh auth login
+2022-06-30T02:21:44.ip-172-31-66-186.ec2.internal git push
+2022-06-30T02:22:07.ip-172-31-66-186.ec2.internal cat .git/config 
+2022-06-30T02:28:43.ip-172-31-66-186.ec2.internal git status
