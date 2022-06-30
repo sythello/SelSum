@@ -1,0 +1,65 @@
+2022-06-28T00:51:48.ip-172-31-66-186.ec2.internal pip install -r requirements.txt 
+2022-06-28T00:51:55.ip-172-31-66-186.ec2.internal pip freeze
+2022-06-28T04:41:48.ip-172-31-66-186.ec2.internal ls artifacts/summs/
+2022-06-28T04:43:39.ip-172-31-66-186.ec2.internal bash selsum/scripts/inference/eval_summs.sh 
+2022-06-28T04:45:02.ip-172-31-66-186.ec2.internal bash selsum/scripts/inference/eval_summs.sh 
+2022-06-28T04:46:23.ip-172-31-66-186.ec2.internal bash selsum/scripts/inference/eval_summs.sh 
+2022-06-28T04:51:25.ip-172-31-66-186.ec2.internal nvidia-smi
+2022-06-28T04:52:13.ip-172-31-66-186.ec2.internal bash selsum/scripts/inference/gen_summs.sh 
+2022-06-28T04:53:18.ip-172-31-66-186.ec2.internal mv artifacts/output/output/[pq]_sel artifacts/output/
+2022-06-28T04:53:31.ip-172-31-66-186.ec2.internal rm -r artifacts/output/output
+2022-06-28T06:10:14.ip-172-31-66-186.ec2.internal bash selsum/scripts/inference/gen_summs.sh 
+2022-06-28T20:21:15.ip-172-31-66-186.ec2.internal nvidia-smi
+2022-06-28T20:24:43.ip-172-31-66-186.ec2.internal echo $CUDA_VISIBLE_DEVICES
+2022-06-28T20:26:07.ip-172-31-66-186.ec2.internal CUDA_VISIBLE_DEVICES=0,1 bash selsum/scripts/training/train_selsum.sh
+2022-06-28T20:26:47.ip-172-31-66-186.ec2.internal echo $MKL_THREADING_LAYER
+2022-06-28T20:26:59.ip-172-31-66-186.ec2.internal echo $PYTHONPATH
+2022-06-28T20:35:29.ip-172-31-66-186.ec2.internal export PYTHONPATH=../fairseq_lib/.:$PYTHONPATH
+2022-06-28T20:35:29.ip-172-31-66-186.ec2.internal export CUDA_VISIBLE_DEVICES=0,1,2,3
+2022-06-28T20:35:31.ip-172-31-66-186.ec2.internal export MKL_THREADING_LAYER=GNU
+2022-06-28T20:35:39.ip-172-31-66-186.ec2.internal export CUDA_VISIBLE_DEVICES=0,1
+2022-06-28T20:35:42.ip-172-31-66-186.ec2.internal echo $MKL_THREADING_LAYER
+2022-06-28T20:35:46.ip-172-31-66-186.ec2.internal echo $PYTHONPATH
+2022-06-28T20:36:07.ip-172-31-66-186.ec2.internal CUDA_VISIBLE_DEVICES=0,1 bash selsum/scripts/training/train_selsum.sh
+2022-06-28T21:00:24.ip-172-31-66-186.ec2.internal which fairseq-preprocess 
+2022-06-28T21:06:54.ip-172-31-66-186.ec2.internal bash preprocessing/scripts/fairseq_binarize.sh 
+2022-06-28T21:48:49.ip-172-31-66-186.ec2.internal tmux a
+2022-06-28T21:48:57.ip-172-31-66-186.ec2.internal conda activate ytshao-selsum
+2022-06-28T21:49:02.ip-172-31-66-186.ec2.internal which pip
+2022-06-28T21:49:23.ip-172-31-66-186.ec2.internal pip show torch
+2022-06-28T22:03:03.ip-172-31-66-186.ec2.internal CUDA_VISIBLE_DEVICES=2 bash selsum/scripts/training/train_prior.sh 
+2022-06-28T22:09:11.ip-172-31-66-186.ec2.internal CUDA_VISIBLE_DEVICES=2 bash selsum/scripts/training/train_prior.sh 
+2022-06-28T22:15:33.ip-172-31-66-186.ec2.internal nvidia-smi
+2022-06-28T22:16:48.ip-172-31-66-186.ec2.internal CUDA_VISIBLE_DEVICES=2 bash selsum/scripts/training/train_prior.sh 
+2022-06-28T22:21:04.ip-172-31-66-186.ec2.internal CUDA_VISIBLE_DEVICES=2 bash selsum/scripts/training/train_prior.sh 
+2022-06-28T22:22:18.ip-172-31-66-186.ec2.internal CUDA_VISIBLE_DEVICES=2 bash selsum/scripts/training/train_prior.sh 
+2022-06-28T22:27:25.ip-172-31-66-186.ec2.internal CUDA_VISIBLE_DEVICES=2 bash selsum/scripts/training/train_prior.sh 
+2022-06-28T22:46:54.ip-172-31-66-186.ec2.internal CUDA_VISIBLE_DEVICES=2 bash selsum/scripts/training/train_prior.sh 
+2022-06-28T22:56:59.ip-172-31-66-186.ec2.internal CUDA_VISIBLE_DEVICES=2 bash selsum/scripts/training/train_prior.sh 
+2022-06-28T23:21:35.ip-172-31-66-186.ec2.internal CUDA_VISIBLE_DEVICES=2 bash selsum/scripts/training/train_prior.sh 
+2022-06-28T23:22:15.ip-172-31-66-186.ec2.internal which python
+2022-06-28T23:22:32.ip-172-31-66-186.ec2.internal python --version
+2022-06-28T23:22:53.ip-172-31-66-186.ec2.internal conda info -e
+2022-06-28T23:23:02.ip-172-31-66-186.ec2.internal ls /home/ec2-user/anaconda3/envs/ytshao-selsum/bin
+2022-06-28T23:23:17.ip-172-31-66-186.ec2.internal echo $PATH
+2022-06-28T23:23:58.ip-172-31-66-186.ec2.internal export PATH=/home/ec2-user/anaconda3/envs/ytshao-selsum/bin:$PATH
+2022-06-28T23:24:01.ip-172-31-66-186.ec2.internal which python
+2022-06-28T23:24:03.ip-172-31-66-186.ec2.internal which pip
+2022-06-28T23:24:08.ip-172-31-66-186.ec2.internal python --version
+2022-06-28T23:25:44.ip-172-31-66-186.ec2.internal tmux a
+2022-06-28T23:25:59.ip-172-31-66-186.ec2.internal conda deactivate
+2022-06-28T23:26:09.ip-172-31-66-186.ec2.internal conda activate ytshao-selsum
+2022-06-28T23:26:11.ip-172-31-66-186.ec2.internal echo $PATH
+2022-06-28T23:26:23.ip-172-31-66-186.ec2.internal which python
+2022-06-28T23:26:26.ip-172-31-66-186.ec2.internal which pip
+2022-06-28T23:26:40.ip-172-31-66-186.ec2.internal nvidia-smi
+2022-06-28T23:27:51.ip-172-31-66-186.ec2.internal bash selsum/scripts/inference/posterior_select_revs.sh 
+2022-06-28T23:28:48.ip-172-31-66-186.ec2.internal bash selsum/scripts/inference/posterior_select_revs.sh 
+2022-06-28T23:29:29.ip-172-31-66-186.ec2.internal CUDA_VISIBLE_DEVICES=3 bash selsum/scripts/inference/posterior_select_revs.sh 
+2022-06-29T13:48:32.ip-172-31-66-186.ec2.internal CUDA_VISIBLE_DEVICES=2 bash selsum/scripts/training/train_prior.sh 
+2022-06-29T14:14:49.ip-172-31-66-186.ec2.internal CUDA_VISIBLE_DEVICES=0,1 bash selsum/scripts/training/train_selsum.sh
+2022-06-29T21:54:47.ip-172-31-66-186.ec2.internal cat selsum/scripts/training/train_prior.sh
+2022-06-29T22:06:34.ip-172-31-66-186.ec2.internal CUDA_VISIBLE_DEVICES=3 bash selsum/scripts/inference/posterior_select_revs.sh 
+2022-06-30T01:34:32.ip-172-31-66-186.ec2.internal CUDA_VISIBLE_DEVICES=0 bash selsum/scripts/training/train_selsum.sh
+2022-06-30T01:39:41.ip-172-31-66-186.ec2.internal git status
+2022-06-30T01:42:46.ip-172-31-66-186.ec2.internal git remote -v

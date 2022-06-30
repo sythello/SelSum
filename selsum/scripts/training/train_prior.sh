@@ -1,13 +1,17 @@
 #!/bin/bash
 
+export PYTHONPATH=../fairseq_lib/.:$PYTHONPATH
+export MKL_THREADING_LAYER=GNU
+
+
 # general settings
 PROJECT_NAME=prior
 BART_DIR=artifacts/bart
 TAG_DIR=artifacts/output/q_sel/
-CHECKPOINT=artifacts/checkpoints/selsum.pt
-DATA_DIR=../data/form
+CHECKPOINT=artifacts/provided_checkpoints/selsum.pt
+DATA_DIR=/home/ec2-user/ytshao/dataset/AMASum/form_min_10_max_100_revs
 LOG_INTERVAL=50
-LOG_FILE=$PROJECT_NAME.txt
+LOG_FILE=logs-$PROJECT_NAME.txt
 SAVE_DIR=checkpoints/$PROJECT_NAME
 
 # general hyper-parameters

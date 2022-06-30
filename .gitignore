@@ -20,3 +20,11 @@ artifacts/output_old
 artifacts/output/*.zip
 checkpoints
 output/
+
+artifacts/output
+artifacts/predicted_output
+artifacts/misc
+artifacts/provided_checkpoints/
+logs-*.txt
+prior.txt
+

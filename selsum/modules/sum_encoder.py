@@ -33,6 +33,9 @@ class SumEncoder(TransformerEncoder):
 
     def forward(self, src_tokens, src_lengths, group_src_indxs, codes=None,
                 return_all_hiddens: bool = False):
+        
+        breakpoint()
+
         enc_out = super(SumEncoder, self).forward(src_tokens=src_tokens,
                                                   src_lengths=src_lengths,
                                                   return_all_hiddens=return_all_hiddens)
