@@ -33,7 +33,6 @@ class SumEncoder(TransformerEncoder):
 
     def forward(self, src_tokens, src_lengths, group_src_indxs, codes=None,
                 return_all_hiddens: bool = False):
-
         ## src_tokens: (bs, seq_len)
         ## src_lengths: (bs)
         ## group_src_indxs: (15 or 5, 10). (Not 100% sure): (total NSENTS, NDOCS)
