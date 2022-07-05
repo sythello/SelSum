@@ -6,7 +6,8 @@ export CLASSPATH=artifacts/misc/stanford-corenlp-4.4.0/stanford-corenlp-4.4.0.ja
 export PYTHONPATH=../fairseq_lib/.:$PYTHONPATH
 export MKL_THREADING_LAYER=GNU
 
-GEN_FILE_PATH=artifacts/summs/test.verd
+# GEN_FILE_PATH=artifacts/summs/test.verd
+GEN_FILE_PATH=artifacts/predicted_output/p_summs/test.verd
 GOLD_FILE_PATH=/home/ec2-user/ytshao/dataset/AMASum/form_min_10_max_100_revs/eval/test.verd
 
 # tokenization

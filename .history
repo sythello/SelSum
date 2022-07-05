@@ -90,3 +90,49 @@
 2022-06-30T02:21:44.ip-172-31-66-186.ec2.internal git push
 2022-06-30T02:22:07.ip-172-31-66-186.ec2.internal cat .git/config 
 2022-06-30T02:28:43.ip-172-31-66-186.ec2.internal git status
+2022-06-30T02:28:45.ip-172-31-66-186.ec2.internal git add .
+2022-06-30T02:29:06.ip-172-31-66-186.ec2.internal git commit
+2022-06-30T02:29:11.ip-172-31-66-186.ec2.internal git push
+2022-06-30T02:39:39.ip-172-31-66-186.ec2.internal git pull
+2022-07-01T06:30:15.ip-172-31-66-186.ec2.internal tmux a
+2022-07-01T16:56:28.ip-172-31-66-186.ec2.internal CUDA_VISIBLE_DEVICES=0 bash selsum/scripts/training/train_selsum.sh
+2022-07-01T17:08:37.ip-172-31-66-186.ec2.internal CUDA_VISIBLE_DEVICES=0 bash selsum/scripts/training/train_selsum.sh
+2022-07-01T17:11:42.ip-172-31-66-186.ec2.internal CUDA_VISIBLE_DEVICES=0 bash selsum/scripts/training/train_selsum.sh
+2022-07-01T17:12:32.ip-172-31-66-186.ec2.internal CUDA_VISIBLE_DEVICES=0 bash selsum/scripts/training/train_selsum.sh
+2022-07-01T17:13:15.ip-172-31-66-186.ec2.internal CUDA_VISIBLE_DEVICES=0 bash selsum/scripts/training/train_selsum.sh
+2022-07-01T17:32:21.ip-172-31-66-186.ec2.internal diff artifacts/output/q_sel/valid.tag artifacts/predicted_output/q_sel/valid.tag 
+2022-07-01T17:33:42.ip-172-31-66-186.ec2.internal diff artifacts/output/q_sel/valid.tag artifacts/predicted_output/q_sel/valid.tag 
+2022-07-01T17:33:51.ip-172-31-66-186.ec2.internal git diff --word-based artifacts/output/q_sel/valid.tag artifacts/predicted_output/q_sel/valid.tag 
+2022-07-01T17:34:57.ip-172-31-66-186.ec2.internal git diff --word-diff artifacts/output/q_sel/valid.tag artifacts/predicted_output/q_sel/valid.tag 
+2022-07-01T18:44:05.ip-172-31-66-186.ec2.internal CUDA_VISIBLE_DEVICES=0 bash selsum/scripts/training/train_selsum.sh
+2022-07-01T19:05:24.ip-172-31-66-186.ec2.internal CUDA_VISIBLE_DEVICES=0 bash selsum/scripts/training/train_selsum.sh
+2022-07-01T22:55:30.ip-172-31-66-186.ec2.internal nvidia-smi\
+2022-07-01T22:55:35.ip-172-31-66-186.ec2.internal nvidia-smi
+2022-07-01T22:55:59.ip-172-31-66-186.ec2.internal CUDA_VISIBLE_DEVICES=0 bash selsum/scripts/training/train_selsum.sh
+2022-07-01T22:56:09.ip-172-31-66-186.ec2.internal nvidia-smi
+2022-07-01T23:21:50.ip-172-31-66-186.ec2.internal CUDA_VISIBLE_DEVICES=0 bash selsum/scripts/training/train_selsum.sh
+2022-07-02T00:00:42.ip-172-31-66-186.ec2.internal CUDA_VISIBLE_DEVICES=0 bash selsum/scripts/training/train_selsum.sh
+2022-07-02T02:54:00.ip-172-31-66-186.ec2.internal CUDA_VISIBLE_DEVICES=0 bash selsum/scripts/training/train_selsum.sh
+2022-07-02T03:41:07.ip-172-31-66-186.ec2.internal bash selsum/scripts/inference/posterior_select_revs.sh 
+2022-07-02T03:46:00.ip-172-31-66-186.ec2.internal nvidia-smi
+2022-07-02T03:53:19.ip-172-31-66-186.ec2.internal mkdir -p selsum/scripts/analysis
+2022-07-02T04:08:37.ip-172-31-66-186.ec2.internal python selsum/scripts/analysis/tag_accuracy.py -f1 /home/ec2-user/ytshao/repos/SelSum/artifacts/output/q_sel/test.tag -f2 /home/ec2-user/ytshao/repos/SelSum/artifacts/predicted_output/q_sel/test.tag 
+2022-07-02T04:10:26.ip-172-31-66-186.ec2.internal python selsum/scripts/analysis/tag_accuracy.py -f1 /home/ec2-user/ytshao/repos/SelSum/artifacts/output/q_sel/test.tag -f2 /home/ec2-user/ytshao/repos/SelSum/artifacts/predicted_output/q_sel/test.tag 
+2022-07-02T04:13:16.ip-172-31-66-186.ec2.internal python selsum/scripts/analysis/tag_accuracy.py -f1 /home/ec2-user/ytshao/repos/SelSum/artifacts/output/q_sel/test.tag -f2 /home/ec2-user/ytshao/repos/SelSum/artifacts/predicted_output/q_sel/test.tag 
+2022-07-02T04:17:44.ip-172-31-66-186.ec2.internal python selsum/scripts/analysis/tag_accuracy.py -f1 /home/ec2-user/ytshao/repos/SelSum/artifacts/output/q_sel/test.tag -f2 /home/ec2-user/ytshao/repos/SelSum/artifacts/predicted_output/q_sel/test.tag 
+2022-07-02T04:18:06.ip-172-31-66-186.ec2.internal python selsum/scripts/analysis/tag_accuracy.py -f1 /home/ec2-user/ytshao/repos/SelSum/artifacts/output/q_sel/test.tag -f2 /home/ec2-user/ytshao/repos/SelSum/artifacts/predicted_output/q_sel/test.tag 
+2022-07-02T04:18:33.ip-172-31-66-186.ec2.internal python selsum/scripts/analysis/tag_accuracy.py -f1 /home/ec2-user/ytshao/repos/SelSum/artifacts/output/q_sel/valid.tag -f2 /home/ec2-user/ytshao/repos/SelSum/artifacts/predicted_output/q_sel/valid.tag 
+2022-07-02T04:18:47.ip-172-31-66-186.ec2.internal python selsum/scripts/analysis/tag_accuracy.py -f1 /home/ec2-user/ytshao/repos/SelSum/artifacts/output/q_sel/train.tag -f2 /home/ec2-user/ytshao/repos/SelSum/artifacts/predicted_output/q_sel/train.tag 
+2022-07-02T10:46:08.ip-172-31-66-186.ec2.internal CUDA_VISIBLE_DEVICES=0,1 bash selsum/scripts/training/train_prior.sh 
+2022-07-05T00:54:42.ip-172-31-66-186.ec2.internal ls -l checkpoints/prior/
+2022-07-05T01:03:30.ip-172-31-66-186.ec2.internal nvidia-smi
+2022-07-05T01:25:14.ip-172-31-66-186.ec2.internal bash selsum/scripts/inference/prior_select_revs.sh 
+2022-07-05T04:12:42.ip-172-31-66-186.ec2.internal bash selsum/scripts/analysis/tag_accuracy.py -f1 artifacts/predicted_output/p_sel/test.tags -f2 artifacts/output/p_sel/test.tags 
+2022-07-05T04:13:01.ip-172-31-66-186.ec2.internal python selsum/scripts/analysis/tag_accuracy.py -f1 artifacts/predicted_output/p_sel/test.tags -f2 artifacts/output/p_sel/test.tags 
+2022-07-05T05:32:54.ip-172-31-66-186.ec2.internal bash selsum/scripts/inference/gen_summs.sh 
+2022-07-05T06:33:21.ip-172-31-66-186.ec2.internal bash selsum/scripts/inference/eval_summs.sh 
+2022-07-05T06:37:06.ip-172-31-66-186.ec2.internal bash selsum/scripts/inference/eval_summs.sh 
+2022-07-05T22:48:42.ip-172-31-66-186.ec2.internal ls ../..
+2022-07-05T22:50:10.ip-172-31-66-186.ec2.internal ls ..
+2022-07-05T22:50:15.ip-172-31-66-186.ec2.internal ls ../..
+2022-07-05T23:25:53.ip-172-31-66-186.ec2.internal git status

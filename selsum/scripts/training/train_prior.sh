@@ -7,8 +7,10 @@ export MKL_THREADING_LAYER=GNU
 # general settings
 PROJECT_NAME=prior
 BART_DIR=artifacts/bart
-TAG_DIR=artifacts/output/q_sel/
-CHECKPOINT=artifacts/provided_checkpoints/selsum.pt
+# TAG_DIR=artifacts/output/q_sel/
+TAG_DIR=artifacts/predicted_output/q_sel/
+# CHECKPOINT=artifacts/provided_checkpoints/selsum.pt
+CHECKPOINT=checkpoints/selsum/checkpoint_best.pt
 DATA_DIR=/home/ec2-user/ytshao/dataset/AMASum/form_min_10_max_100_revs
 LOG_INTERVAL=50
 LOG_FILE=logs-$PROJECT_NAME.txt
