@@ -1,3 +1,5 @@
+set -e
+
 PROJECT_WORK_DIR=/home/ec2-user/ytshao/repos/SelSum
 TASK=/home/ec2-user/ytshao/dataset/AMASum/form_min_10_max_100_revs
 
