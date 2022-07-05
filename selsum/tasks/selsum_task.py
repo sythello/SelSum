@@ -128,20 +128,20 @@ class SelSumTask(AbsTask):
         feats_path = os.path.join(base_path, f"{split}.feat")
 
         # loading
-        src_ds = load_indexed_dataset(src_path, dictionary=self.dictionary)
+        src_ds = load_indexed_dataset(src_path, dictionary=self.dictionary)     ## Dataset[Tensor(size=(text_len,), type=int)]
         if src_ds is None:
             raise ValueError(f"Could not load the source dataset in "
                              f"'{src_path}'.")
         src_ds = self._create_source_dataset(dataset=src_ds,
-                                             dataset_sizes=src_ds.sizes)
+                                             dataset_sizes=src_ds.sizes)        ## Dataset[List[n_docs, Tensor(size=(doc_len,), type=int)]]
         tgt_ds = self._load_target_dataset(tgt_path)
 
         # features
         feat_ds = read_subseqs(feats_path, data_type='float', to_tensors=False,
-                               order=list(range(len(FEATURE_ORDER))))
+                               order=list(range(len(FEATURE_ORDER))))           ## List (size: (n_samples, n_docs, n_feats))
         feat_ds = RawLabelDataset(feat_ds)
         ds = InferDataset(src_ds=src_ds, feat_ds=feat_ds, tgt_ds=tgt_ds,
-                          max_doc_len=MAX_DOC_LEN, debug=self.args.debug)
+                          max_doc_len=MAX_DOC_LEN, debug=self.args.debug)       ## Dataset; sample keys: ['id', 'source', 'target', 'feats']
         logger.info("Split: {0}, Loaded {1} samples".format(split, len(ds)))
         logger.info(f"The dataset size: {len(ds)}")
         self.datasets[split] = ds

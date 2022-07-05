@@ -121,7 +121,7 @@ def main(args, init_distributed=False):
         epoch_itr = trainer.get_train_iterator(
             epoch_itr.next_epoch_idx,
             # sharded data: get train iterator for next epoch
-            load_dataset=(os.pathsep in getattr(args, "data", "")),
+            load_dataset=(os.pathsep in getattr(args, "data", "")),     ## Will call task.load_dataset() inside
         )
     train_meter.stop()
     logger.info("done training in {:.1f} seconds".format(train_meter.sum))

@@ -83,14 +83,14 @@ class AbsTask(FairseqTask):
         budgets = [self.args.max_tokens - s - offset for s in tgt_ds.sizes]
         src_ds = data_utils.load_indexed_dataset(src_path,
                                                  dataset_impl=self.args.dataset_impl,
-                                                 dictionary=self.dictionary)
+                                                 dictionary=self.dictionary)    ## Dataset[Tensor(size=(text_len,), type=int)]
         if src_ds is None:
             raise ValueError(f"Could not load the source dataset in "
                              f"'{src_path}'.")
         src_ds = self._create_source_dataset(dataset=src_ds,
                                              max_doc_len=MAX_DOC_LEN,
                                              dataset_sizes=src_ds.sizes,
-                                             max_budgets=budgets)
+                                             max_budgets=budgets)               ## Dataset[List[n_docs, Tensor(size=(doc_len,), type=int)]]
 
         ds = AbsDataset(src=src_ds, tgt=tgt_ds,
                         shuffle=self.args.shuffle,
@@ -118,7 +118,7 @@ class AbsTask(FairseqTask):
         """
         dataset = SeqDataset(dataset, dataset_sizes)
         dataset = StripTokenDataset(dataset, self.dictionary.eos())
-        dataset = SeqSplitter(dataset=dataset, sep_indxs=self.sep_indxs)
+        dataset = SeqSplitter(dataset=dataset, sep_indxs=self.sep_indxs)    ## splits each src text in dataset by sep_indxs
         if max_budgets is not None or max_doc_len is not None:
             dataset = DocReducer(dataset=dataset, max_budgets=max_budgets,
                                  sort_docs=False, max_doc_len=max_doc_len)
